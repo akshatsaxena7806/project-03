@@ -5,9 +5,9 @@ import java.sql.Timestamp;
 import java.util.Date;
 /**
  * user JavaDto encapsulates user attributes
- * @author Ajay Pratap Kerketta
- *
+ * @author akshat saxena
  */
+
 
 public class UserDTO extends BaseDTO {
 	public static final String ACTIVE = "Active";

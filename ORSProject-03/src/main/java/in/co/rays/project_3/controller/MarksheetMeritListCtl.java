@@ -22,7 +22,7 @@ import in.co.rays.project_3.util.ServletUtility;
 /**
  * marksheetmerit list functionlity controller to show merit list student
  * 
- * @author Ajay Pratap Kerketta
+ * @author Akshat saxena
  *
  */
 @WebServlet(name = "MarksheetMeritListCtl", urlPatterns = { "/ctl/MarksheetMeritListCtl" })

@@ -27,7 +27,7 @@ import in.co.rays.project_3.util.ServletUtility;
  * marksheeet functionality controller.to perform add,delete and update
  * operation
  * 
- * @author Ajay Pratap Kerketta
+ * @author Akshat saxena
  *
  */
 @WebServlet(urlPatterns = { "/ctl/MarksheetCtl" })

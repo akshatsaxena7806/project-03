@@ -20,7 +20,7 @@ import in.co.rays.project_3.util.HibDataSource;
 /**
  * Hibernate implements of TimeTable model
  * 
- * @author Ajay Pratap Kerketta
+ * @author Akshat saxena
  *
  */
 public class TimetableModelHibImp implements TimetableModelInt {

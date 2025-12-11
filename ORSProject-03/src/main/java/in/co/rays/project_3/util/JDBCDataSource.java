@@ -7,7 +7,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 /**
  * JDBC DataSource is a Data Connection Pool
- * @author Ajay Pratap Kerketta
+ * @author Akshat saxena
  *
  */
 public class JDBCDataSource {

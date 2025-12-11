@@ -65,8 +65,8 @@
 			if (list.size() != 0) {
 			%>
 			<center>
-				<h1 class="text-dark font-weight-bold pt-3">
-					<u>User List</u>
+				<h1 class="text-dark ">
+					<b><u>User List</u></b>
 				</h1>
 			</center>
 			<div class="row">
