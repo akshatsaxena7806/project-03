@@ -232,6 +232,7 @@ i.css {
 										HashMap map = new HashMap();
 										map.put("Male", "Male");
 										map.put("Female", "Female");
+										
 
 										String htmlList = HTMLUtility.getList("gender", dto.getGender(), map);
 									%>

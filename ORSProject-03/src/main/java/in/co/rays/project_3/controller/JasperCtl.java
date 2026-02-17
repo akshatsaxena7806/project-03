@@ -47,7 +47,7 @@ public class JasperCtl extends BaseCtl {
 
 			String jasperFile = System.getenv("JASPER_REPORT");
 			if (jasperFile == null) {
-				jasperFile = rb.getString("JASPER_REPORT");
+				jasperFile = getServletContext().getRealPath("/jasper/project_3.jrxml");
 			}
 
 			JasperReport jasperReport = JasperCompileManager.compileReport(jasperFile);

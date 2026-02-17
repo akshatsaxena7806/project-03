@@ -61,7 +61,7 @@ public class UserListCtl extends BaseCtl {
 	/**
 	 * Contains Display logics
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request,HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("UserListCtl doGet Start");
 		List list;

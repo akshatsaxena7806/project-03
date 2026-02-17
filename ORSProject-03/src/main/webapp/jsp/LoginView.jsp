@@ -98,6 +98,7 @@ i.css {
 										if (!ServletUtility.getErrorMessage(request).equals("")) {
 									%>
 									<div class="alert alert-danger alert-dismissible">
+		
 										<button type="button" class="close" data-dismiss="alert">&times;</button>
 										<%=ServletUtility.getErrorMessage(request)%>
 									</div>

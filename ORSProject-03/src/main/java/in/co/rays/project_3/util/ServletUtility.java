@@ -61,7 +61,6 @@ public class ServletUtility {
             HttpServletResponse response) throws IOException, ServletException {
         request.setAttribute("exception", e);
         response.sendRedirect(ORSView.ERROR_CTL);
-
     }
 
     /**

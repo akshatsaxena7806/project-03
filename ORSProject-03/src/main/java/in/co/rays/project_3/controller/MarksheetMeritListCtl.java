@@ -107,7 +107,6 @@ public class MarksheetMeritListCtl extends BaseCtl {
 		}
 		log.debug("Marksheet merit list dopost end");
 	}
-
 	@Override
 	protected String getView() {
 		// TODO Auto-generated method stub

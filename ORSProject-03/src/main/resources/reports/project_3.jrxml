@@ -156,7 +156,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Consolas" size="18"/>
 				</textElement>
-				<text><![CDATA[© Ajay Pratap Kerketta]]></text>
+				<text><![CDATA[© akshat saxena]]></text>
 			</staticText>
 			<line direction="BottomUp">
 				<reportElement x="-20" y="40" width="595" height="1" uuid="b0ee3be4-127a-49cd-b566-abdf520ba1cd"/>

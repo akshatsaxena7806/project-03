@@ -136,7 +136,7 @@
 			<div style="margin-bottom: 20px;" class="table-responsive">
 				<table class="table table-bordered table-dark table-hover">
 					<thead>
-						<tr style="background-color: #8C8C8C;">
+						<tr style="background-color: red;">
 
 							<th width="10%"><input type="checkbox" id="select_all"
 								name="Select" class="text"> Select All</th>
@@ -199,7 +199,7 @@
 					<td align="right"><input type="submit" name="operation"
 						class="btn btn-warning btn-md" style="font-size: 17px"
 						style="padding: 5px;" 
-						value="<%=UserListCtl.OP_NEXT%>" <%=(nextPageSize != 0) ? "" : "disabled"%>></td>
+						value="<%=UserListCtl.OP_NEXT%>" <%=(nextPageSize > 0) ? "" : "disabled"%>></td>
 				</tr>
 				<tr></tr>
 			</table>
