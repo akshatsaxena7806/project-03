@@ -45,4 +45,16 @@ public class HibDataSource {
 			session.close();
 		}
 	}
-}
+	public static synchronized void rebuildSessionFactory() {
+		try {
+			if (sessionFactory != null) {
+				sessionFactory.close();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sessionFactory = null;
+		}
+
+	}
+	}

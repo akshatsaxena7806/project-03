@@ -176,4 +176,40 @@ public final class ModelFactory {
 
 		return facultyModel;
 	}
+
+	public ProfileModelInt getProfileModel() {
+		ProfileModelInt profileModel = (ProfileModelInt) modelCache.get("profileModel");
+		if (profileModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				profileModel = new ProfileModelHibImpl();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				profileModel = new ProfileModelHibImpl();
+			}
+			modelCache.put("profileModel", profileModel);
+		}
+
+		return profileModel;
+	}
+
+	public InventoryModelInt getInventoryModel() {
+
+		InventoryModelInt inventoryModel = (InventoryModelInt) modelCache.get("inventoryModel");
+
+		if (inventoryModel == null) {
+
+			if ("Hibernate".equals(DATABASE)) {
+				inventoryModel = new InventoryModelHibImp();
+			}
+
+			if ("JDBC".equals(DATABASE)) {
+				inventoryModel = new InventoryModelHibImp();
+			}
+
+			modelCache.put("inventoryModel", inventoryModel);
+		}
+
+		return inventoryModel;
+	}
+
 }

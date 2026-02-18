@@ -15,6 +15,7 @@ import org.hibernate.criterion.Restrictions;
 
 import in.co.rays.project_3.dto.UserDTO;
 import in.co.rays.project_3.exception.ApplicationException;
+import in.co.rays.project_3.exception.DatabaseException;
 import in.co.rays.project_3.exception.DuplicateRecordException;
 import in.co.rays.project_3.exception.RecordNotFoundException;
 import in.co.rays.project_3.util.EmailBuilder;
@@ -93,7 +94,7 @@ public class UserModelHibImp implements UserModelInt {
 		UserDTO existDto = findByLogin(dto.getLogin());
 		// Check if updated LoginId already exist
 		if (existDto != null && existDto.getId() != dto.getId()) {
-			 throw new DuplicateRecordException("LoginId is already exist");
+			throw new DuplicateRecordException("LoginId is already exist");
 		}
 
 		try {
@@ -242,22 +243,56 @@ public class UserModelHibImp implements UserModelInt {
 		return list;
 	}
 
-	public UserDTO authenticate(String login, String password) throws ApplicationException {
-		// TODO Auto-generated method stub
+//	public UserDTO authenticate(String login, String password) throws ApplicationException {
+//		// TODO Auto-generated method stub
+//		Session session = null;
+//		UserDTO dto = null;
+//		session = HibDataSource.getSession();
+//		Query q = session.createQuery("from UserDTO where login=? and password=?");
+//		q.setString(0, login);
+//		q.setString(1, password);
+//		List list = q.list();
+//		if (list.size() > 0) {
+//			dto = (UserDTO) list.get(0);
+//		} else {
+//			dto = null;
+//
+//		}
+//		return dto;
+//	}
+
+	public UserDTO authenticate(String login, String password) throws DatabaseException {
+
 		Session session = null;
 		UserDTO dto = null;
-		session = HibDataSource.getSession();
-		Query q = session.createQuery("from UserDTO where login=? and password=?");
-		q.setString(0, login);
-		q.setString(1, password);
-		List list = q.list();
-		if (list.size() > 0) {
-			dto = (UserDTO) list.get(0);
-		} else {
-			dto = null;
 
+		try {
+			session = HibDataSource.getSession();
+
+			Query q = session.createQuery("from UserDTO where login = ? and password = ?");
+			q.setString(0, login);
+			q.setString(1, password);
+
+			List list = q.list();
+
+			if (list != null && list.size() > 0) {
+				dto = (UserDTO) list.get(0);
+				System.out.println(dto);
+			}
+
+			return dto;
+
+		} catch (org.hibernate.exception.JDBCConnectionException e) {
+			e.printStackTrace();
+			throw new DatabaseException("Database connection was lost. Please try again.");
+
+		} catch (Exception e) {
+
+			throw new DatabaseException("Error during authentication");
+
+		} finally {
+			HibDataSource.closeSession(session);
 		}
-		return dto;
 	}
 
 	public List getRoles(UserDTO dto) throws ApplicationException {

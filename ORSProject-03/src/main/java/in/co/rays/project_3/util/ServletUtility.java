@@ -1,6 +1,7 @@
 package in.co.rays.project_3.util;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -247,5 +248,17 @@ public class ServletUtility {
         int pageSize= (Integer) request.getAttribute("pageSize");
         return pageSize;
      }
+    
+    public static void handleExceptionDBDown(Exception e, HttpServletRequest request,
+            HttpServletResponse response,String view) throws IOException, ServletException {
+    	  request.setAttribute(BaseCtl.MSG_ERROR, "Database connection was lost. Please try again.");
+    	  ServletUtility.setList(new ArrayList(), request);
+          ServletUtility.setDto(null, request);
+          ServletUtility.setPageNo(1, request);
+          ServletUtility.setPageSize(5, request);
+          request.setAttribute("nextListSize", 0);
+    	  HibDataSource.rebuildSessionFactory();
+        forward(view, request, response);
+    }
    
 }

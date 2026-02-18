@@ -82,5 +82,18 @@ public interface ORSView {
 	public String MY_PROFILE_CTL = APP_CONTEXT + "/ctl/MyProfileCtl";
 	public String FORGET_PASSWORD_CTL = APP_CONTEXT + "/ForgetPasswordCtl";
 	public String MARKSHEET_MERIT_LIST_CTL = APP_CONTEXT + "/ctl/MarksheetMeritListCtl";
+	
+	
+	public String PROFILE_VIEW = PAGE_FOLDER + "/ProfileView.jsp";
+	public String PROFILE_LIST_VIEW = PAGE_FOLDER + "/ProfileListView.jsp";
+	public String PROFILE_CTL = APP_CONTEXT + "/ctl/ProfileCtl";
+	public String PROFILE_LIST_CTL = APP_CONTEXT + "/ctl/ProfileListCtl";
+	
+	
+	public String INVENTORY_VIEW = PAGE_FOLDER + "/InventoryView.jsp";
+	public String INVENTORY_LIST_VIEW = PAGE_FOLDER + "/InventoryListView.jsp";
+	public String INVENTORY_CTL = APP_CONTEXT + "/ctl/InventoryCtl";
+	public String INVENTORY_LIST_CTL = APP_CONTEXT + "/ctl/InventoryListCtl";
+
 
 }

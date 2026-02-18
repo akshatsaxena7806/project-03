@@ -14,6 +14,7 @@ import in.co.rays.project_3.dto.BaseDTO;
 import in.co.rays.project_3.dto.RoleDTO;
 import in.co.rays.project_3.dto.UserDTO;
 import in.co.rays.project_3.exception.ApplicationException;
+import in.co.rays.project_3.exception.DatabaseException;
 import in.co.rays.project_3.model.ModelFactory;
 import in.co.rays.project_3.model.RoleModelInt;
 import in.co.rays.project_3.model.UserModelInt;
@@ -94,7 +95,12 @@ public class LoginCtl extends BaseCtl {
 			try {
 				dto = model.findByPK(id);
 				ServletUtility.setDto(dto, request);
-			} catch (ApplicationException e) {
+			}catch (DatabaseException de) {
+                de.printStackTrace();
+                ServletUtility.handleExceptionDBDown(de, request, response, getView());
+                return;
+
+            }catch (ApplicationException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				ServletUtility.handleException(e, request, response);
@@ -149,7 +155,12 @@ public class LoginCtl extends BaseCtl {
 					ServletUtility.setErrorMessage("Invalid LoginId And Password!", request);
 				}
 
-			} catch (ApplicationException e) {
+			}catch (DatabaseException de) {
+                de.printStackTrace();
+                ServletUtility.handleExceptionDBDown(de, request, response, getView());
+                return;
+
+            } catch (ApplicationException e) {
 				log.error(e);
 				ServletUtility.handleException(e, request, response);
 				return;
