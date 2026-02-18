@@ -207,6 +207,11 @@ public class InventoryModelHibImp implements InventoryModelInt {
                 if (dto.getQuantity() != null && dto.getQuantity() > 0) {
                     criteria.add(Restrictions.eq("quantity", dto.getQuantity()));
                 }
+                
+                if (dto.getDob() != null && dto.getDob().getDate() > 0) {
+					criteria.add(Restrictions.eq("dob", dto.getDob()));
+				}
+                
             }
 
             if (pageSize > 0) {

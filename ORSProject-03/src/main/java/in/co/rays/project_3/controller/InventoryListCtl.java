@@ -86,7 +86,14 @@ public class InventoryListCtl extends BaseCtl {
             ServletUtility.redirect(ORSView.INVENTORY_CTL, request, response);
             return;
 
-        } else if (OP_DELETE.equalsIgnoreCase(op)) {
+        }
+        
+        else if (OP_RESET.equalsIgnoreCase(op)) {
+			ServletUtility.redirect(ORSView.INVENTORY_LIST_CTL, request, response);
+			return;
+		}
+        
+        else if (OP_DELETE.equalsIgnoreCase(op)) {
 
             String[] ids = request.getParameterValues("ids");
 

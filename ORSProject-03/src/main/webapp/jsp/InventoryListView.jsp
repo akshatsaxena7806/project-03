@@ -31,15 +31,15 @@
 <body class="p4">
 
 	<%@include file="Header.jsp"%>
+	<%@include file="calendar.jsp" %>
 
 	<div class="container-fluid">
 
 		<jsp:useBean id="dto" class="in.co.rays.project_3.dto.InventoryDTO"
 			scope="request"></jsp:useBean>
 
-		<h2 class="text-center text-light font-weight-bold">
-			Inventory List
-		</h2>
+		<h2 class="text-center text-light font-weight-bold">Inventory
+			List</h2>
 
 		<!-- Error & Success Messages -->
 		<%
@@ -77,10 +77,57 @@
 				if (list.size() != 0) {
 			%>
 
-			<input type="hidden" name="pageNo" value="<%=pageNo%>">
-			<input type="hidden" name="pageSize" value="<%=pageSize%>">
+			<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input
+				type="hidden" name="pageSize" value="<%=pageSize%>"> <br>
+			<!-- SEARCH FILTER -->
+			<div class="table-responsive">
+				<table
+					class="table table-borderless w-100 text-center bg-transparent">
+					<tr>
+						<td>
+							<div
+								class="d-flex justify-content-center align-items-center flex-wrap bg-light p-3 rounded shadow-sm">
+
+								<!-- Supplier Name -->
+								<div class="mx-2">
+									<label><b>Supplier Name :</b></label>
+								</div>
+								<div class="mx-2">
+									<input type="text" class="form-control form-control-sm"
+										name="supplierName" placeholder="Enter Supplier Name"
+										value="<%=ServletUtility.getParameter("supplierName", request)%>">
+								</div>
+
+								<!-- Product -->
+								<div class="mx-2">
+									<label><b>Product :</b></label>
+								</div>
+								<div class="mx-2">
+									<input type="text" class="form-control form-control-sm"
+										name="product" placeholder="Enter Product"
+										value="<%=ServletUtility.getParameter("product", request)%>">
+								</div>
+								
+
+								<!-- Buttons -->
+								<div class="mx-2">
+									<input type="submit" class="btn btn-sm btn-primary"
+										name="operation" value="<%=InventoryListCtl.OP_SEARCH%>">
+
+									<input type="submit"
+										class="btn btn-sm btn-outline-secondary ml-1" name="operation"
+										value="<%=InventoryListCtl.OP_RESET%>">
+								</div>
+
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
 
 			<br>
+
+
 
 			<!-- DATA TABLE -->
 			<div class="table-responsive">
@@ -89,7 +136,8 @@
 
 					<thead class="thead-light">
 						<tr>
-							<th><input type="checkbox" id="selectall"> Select All</th>
+							<th><input type="checkbox" id="selectall"> Select
+								All</th>
 							<th>S.No</th>
 							<th>Supplier Name</th>
 							<th>Date</th>
@@ -105,21 +153,15 @@
 								dto = (InventoryDTO) it.next();
 						%>
 						<tr>
-							<td>
-								<input type="checkbox" class="case" name="ids"
-									value="<%=dto.getId()%>">
-							</td>
+							<td><input type="checkbox" class="case" name="ids"
+								value="<%=dto.getId()%>"></td>
 							<td><%=index++%></td>
 							<td class="text-capitalize"><%=dto.getSupplierName()%></td>
 							<td><%=DataUtility.getDateString(dto.getDob())%></td>
 							<td><%=dto.getQuantity()%></td>
 							<td class="text-capitalize"><%=dto.getProduct()%></td>
-							<td>
-								<a href="InventoryCtl?id=<%=dto.getId()%>"
-									class="btn btn-link btn-sm p-0">
-									Edit
-								</a>
-							</td>
+							<td><a href="InventoryCtl?id=<%=dto.getId()%>"
+								class="btn btn-link btn-sm p-0"> Edit </a></td>
 						</tr>
 						<%
 							}
@@ -132,35 +174,23 @@
 			<!-- PAGINATION & ACTIONS -->
 			<table class="table w-100">
 				<tr>
-					<td width="25%">
-						<input type="submit"
-							class="btn btn-outline-primary"
-							name="operation"
-							value="<%=InventoryListCtl.OP_PREVIOUS%>"
-							<%=pageNo > 1 ? "" : "disabled"%>>
-					</td>
+					<td width="25%"><input type="submit"
+						class="btn btn-outline-primary" name="operation"
+						value="<%=InventoryListCtl.OP_PREVIOUS%>"
+						<%=pageNo > 1 ? "" : "disabled"%>></td>
 
-					<td width="25%" class="text-center">
-						<input type="submit"
-							class="btn btn-outline-success"
-							name="operation"
-							value="<%=InventoryListCtl.OP_NEW%>">
-					</td>
+					<td width="25%" class="text-center"><input type="submit"
+						class="btn btn-outline-success" name="operation"
+						value="<%=InventoryListCtl.OP_NEW%>"></td>
 
-					<td width="25%" class="text-center">
-						<input type="submit"
-							class="btn btn-outline-danger"
-							name="operation"
-							value="<%=InventoryListCtl.OP_DELETE%>">
-					</td>
+					<td width="25%" class="text-center"><input type="submit"
+						class="btn btn-outline-danger" name="operation"
+						value="<%=InventoryListCtl.OP_DELETE%>"></td>
 
-					<td width="25%" class="text-right">
-						<input type="submit"
-							class="btn btn-outline-primary"
-							name="operation"
-							value="<%=InventoryListCtl.OP_NEXT%>"
-							<%=nextPageSize != 0 ? "" : "disabled"%>>
-					</td>
+					<td width="25%" class="text-right"><input type="submit"
+						class="btn btn-outline-primary" name="operation"
+						value="<%=InventoryListCtl.OP_NEXT%>"
+						<%=nextPageSize != 0 ? "" : "disabled"%>></td>
 				</tr>
 			</table>
 
@@ -171,12 +201,9 @@
 
 			<table class="table w-100">
 				<tr>
-					<td class="text-right">
-						<input type="submit"
-							class="btn btn-warning"
-							name="operation"
-							value="<%=InventoryListCtl.OP_BACK%>">
-					</td>
+					<td class="text-right"><input type="submit"
+						class="btn btn-warning" name="operation"
+						value="<%=InventoryListCtl.OP_BACK%>"></td>
 				</tr>
 			</table>
 
