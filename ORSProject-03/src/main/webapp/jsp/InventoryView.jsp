@@ -119,7 +119,7 @@ if (!ServletUtility.getErrorMessage(request).equals("")) {
 
 <!-- Purchase Date -->
 <span><b>Purchase Date</b> <span style="color:red">*</span></span>
-<input type="text" id="datepicker3" name="dob"
+<input type="text" id="datepicker4" name="dob"
 	class="form-control" readonly="readonly"
 	value="<%=DataUtility.getDateString(dto.getDob())%>">
 <font color="red">

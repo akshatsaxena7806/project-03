@@ -51,14 +51,25 @@ public class UserModelHibImp implements UserModelInt {
 			session.save(dto);
 
 			tx.commit();
+			
+			
 
-		} catch (HibernateException e) {
+		}catch (org.hibernate.exception.JDBCConnectionException e) {
+			e.printStackTrace();
+			throw new DatabaseException("Database connection was lost. Please try again.");
+
+		}
+		
+		
+		catch (HibernateException e) {
 			e.printStackTrace();
 			// TODO: handle exception
 			if (tx != null) {
 				tx.rollback();
-
-			}
+        }
+			
+			
+			
 			throw new ApplicationException("Exception in User Add " + e.getMessage());
 		} finally {
 			session.close();
@@ -81,6 +92,8 @@ public class UserModelHibImp implements UserModelInt {
 			if (tx != null) {
 				tx.rollback();
 			}
+			
+			
 			throw new ApplicationException("Exception in User Delete" + e.getMessage());
 		} finally {
 			session.close();

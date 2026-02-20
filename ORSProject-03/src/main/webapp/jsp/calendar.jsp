@@ -69,6 +69,21 @@
 	        maxDate: 0   // up to today's date
 	    });
 	});
+	
+
+	$(function() {
+	    $("#datepicker4").datepicker({
+	        dateFormat: 'dd/mm/yy',
+	        changeMonth: true,
+	        changeYear: true,
+	        yearRange: '1950:2030',   // auto-updates years
+	           // up to today's date
+	    });
+	});
+	
+	
+	
+	
 
 </script>
 </head>

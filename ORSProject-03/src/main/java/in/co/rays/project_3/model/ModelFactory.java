@@ -197,7 +197,6 @@ public final class ModelFactory {
 		InventoryModelInt inventoryModel = (InventoryModelInt) modelCache.get("inventoryModel");
 
 		if (inventoryModel == null) {
-
 			if ("Hibernate".equals(DATABASE)) {
 				inventoryModel = new InventoryModelHibImp();
 			}
@@ -210,6 +209,26 @@ public final class ModelFactory {
 		}
 
 		return inventoryModel;
+	}
+
+	public SessionModelInt getSessionModel() {
+
+		SessionModelInt sessionModel = (SessionModelInt) modelCache.get("sessionModel");
+
+		if (sessionModel == null) {
+
+			if ("Hibernate".equals(DATABASE)) {
+				sessionModel = new SessionModelHibImp();
+			}
+
+			if ("JDBC".equals(DATABASE)) {
+				sessionModel = new SessionModelHibImp(); // change if JDBC impl created
+			}
+
+			modelCache.put("sessionModel", sessionModel);
+		}
+
+		return sessionModel;
 	}
 
 }

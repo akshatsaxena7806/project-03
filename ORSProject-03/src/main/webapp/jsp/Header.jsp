@@ -228,6 +228,17 @@
 							<i class="fa fa-list mr-2"></i>Inventory List
 						</a>
 					</div></li>
+				</li>
+				<li class="nav-item dropdown px-1"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+						Session </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="<%=ORSView.SESSION_CTL%>"> <i
+							class="fa fa-plus mr-2"></i>Add Session
+						</a> <a class="dropdown-item" href="<%=ORSView.SESSION_LIST_CTL%>">
+							<i class="fa fa-list mr-2"></i>Session List
+						</a>
+					</div></li>
 
 
 				<% } %>

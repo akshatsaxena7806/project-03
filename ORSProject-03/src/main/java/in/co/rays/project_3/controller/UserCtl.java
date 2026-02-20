@@ -15,6 +15,7 @@ import in.co.rays.project_3.dto.BaseDTO;
 import in.co.rays.project_3.dto.RoleDTO;
 import in.co.rays.project_3.dto.UserDTO;
 import in.co.rays.project_3.exception.ApplicationException;
+import in.co.rays.project_3.exception.DatabaseException;
 import in.co.rays.project_3.exception.DuplicateRecordException;
 import in.co.rays.project_3.model.ModelFactory;
 import in.co.rays.project_3.model.RoleModelInt;
@@ -204,7 +205,13 @@ public class UserCtl extends BaseCtl {
 					try {
 						model.add(dto);
 						ServletUtility.setSuccessMessage("Data is successfully saved", request);
-					} catch (ApplicationException e) {
+					}catch (DatabaseException de) {
+		                de.printStackTrace();
+		                ServletUtility.handleExceptionDBDown(de, request, response, getView());
+		                return;
+
+		            } 
+					catch (ApplicationException e) {
 						log.error(e);
 						ServletUtility.handleException(e, request, response);
 						return;
