@@ -231,4 +231,24 @@ public final class ModelFactory {
 		return sessionModel;
 	}
 
+	public LanguageModelInt getLanguageModel() {
+
+		LanguageModelInt languageModel = (LanguageModelInt) modelCache.get("languageModel");
+
+		if (languageModel == null) {
+
+			if ("Hibernate".equals(DATABASE)) {
+				languageModel = new LanguageModelHibImp();
+			}
+
+			if ("JDBC".equals(DATABASE)) {
+				languageModel = new LanguageModelHibImp(); // change if JDBC impl created
+			}
+
+			modelCache.put("languageModel", languageModel);
+		}
+
+		return languageModel;
+	}
+
 }

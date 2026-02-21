@@ -20,6 +20,8 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript"
+	src="<%=ORSView.APP_CONTEXT%>/js/CheckBox11.js"></script>
 
 <style>
 .aj {
@@ -43,23 +45,23 @@
 <body>
 
 	<%
-    UserDTO userDto = (UserDTO) session.getAttribute("user");
-    boolean userLoggedIn = userDto != null;
+		UserDTO userDto = (UserDTO) session.getAttribute("user");
+		boolean userLoggedIn = userDto != null;
 
-    String welcomeMsg = "Hi, ";
-    if (userLoggedIn) {
-        String role = (String) session.getAttribute("role");
-        welcomeMsg += userDto.getFirstName() + " (" + role + ")";
-    } else {
-        welcomeMsg += "Guest";
-    }
-%>
+		String welcomeMsg = "Hi, ";
+		if (userLoggedIn) {
+			String role = (String) session.getAttribute("role");
+			welcomeMsg += userDto.getFirstName() + " (" + role + ")";
+		} else {
+			welcomeMsg += "Guest";
+		}
+	%>
 
 	<nav
 		class="navbar navbar-expand-lg fixed-top aj 
-    <% if(userLoggedIn && userDto.getRoleId() == RoleDTO.STUDENT){ %>
+    <%if (userLoggedIn && userDto.getRoleId() == RoleDTO.STUDENT) {%>
         student-nav-fix
-    <% } %>">
+    <%}%>">
 
 		<a class="navbar-brand" href="<%=ORSView.WELCOME_CTL%>"> <img
 			src="<%=ORSView.APP_CONTEXT%>/img/custom.png" width="190px"
@@ -77,9 +79,13 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-auto">
 
-				<% if (userLoggedIn) { %>
+				<%
+					if (userLoggedIn) {
+				%>
 
-				<% if (userDto.getRoleId() == RoleDTO.STUDENT) { %>
+				<%
+					if (userDto.getRoleId() == RoleDTO.STUDENT) {
+				%>
 
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
@@ -104,7 +110,9 @@
 						</a>
 					</div></li>
 
-				<% } else if (userDto.getRoleId() == RoleDTO.ADMIN) { %>
+				<%
+					} else if (userDto.getRoleId() == RoleDTO.ADMIN) {
+				%>
 
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
@@ -239,11 +247,25 @@
 							<i class="fa fa-list mr-2"></i>Session List
 						</a>
 					</div></li>
+				<li class="nav-item dropdown px-1"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+						Language </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="<%=ORSView.LANGUAGE_CTL%>"> <i
+							class="fa fa-plus mr-2"></i>Add Language
+						</a> <a class="dropdown-item" href="<%=ORSView.LANGUAGE_LIST_CTL%>">
+							<i class="fa fa-list mr-2"></i>Language List
+						</a>
+					</div></li>
 
 
-				<% } %>
+				<%
+					}
+				%>
 
-				<% } %>
+				<%
+					}
+				%>
 
 				<!-- ✅ WELCOME DROPDOWN -->
 				<li class="nav-item dropdown ml-3"><a
@@ -251,7 +273,9 @@
 						<span style="color: white;"><%=welcomeMsg%></span>
 				</a>
 					<div class="dropdown-menu dropdown-menu-right">
-						<% if (userLoggedIn) { %>
+						<%
+							if (userLoggedIn) {
+						%>
 						<a class="dropdown-item"
 							href="<%=ORSView.LOGIN_CTL%>?operation=<%=LoginCtl.OP_LOG_OUT%>">
 							<i class="fa fa-sign-out-alt"></i> Logout
@@ -263,14 +287,18 @@
 							href="<%=ORSView.JAVA_DOC_VIEW%>"> <i class="fa fa-clone"></i>
 							Java Doc
 						</a>
-						<% } else { %>
+						<%
+							} else {
+						%>
 						<a class="dropdown-item" href="<%=ORSView.LOGIN_CTL%>"> <i
 							class="fa fa-sign-in-alt"></i> Login
 						</a> <a class="dropdown-item"
 							href="<%=ORSView.USER_REGISTRATION_CTL%>"> <i
 							class="fa fa-registered"></i> User Registration
 						</a>
-						<% } %>
+						<%
+							}
+						%>
 					</div></li>
 
 

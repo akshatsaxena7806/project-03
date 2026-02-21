@@ -98,8 +98,11 @@ public interface ORSView {
 	
 	public String SESSION_VIEW = PAGE_FOLDER + "/SessionView.jsp";
 	public String SESSION_LIST_VIEW = PAGE_FOLDER + "/SessionListView.jsp";
-
-	public String SESSION_CTL = APP_CONTEXT + "/ctl/SessionCtl";
+    public String SESSION_CTL = APP_CONTEXT + "/ctl/SessionCtl";
 	public String SESSION_LIST_CTL = APP_CONTEXT + "/ctl/SessionListCtl";
 
+	public String LANGUAGE_VIEW = PAGE_FOLDER + "/LanguageView.jsp";
+	public String LANGUAGE_LIST_VIEW = PAGE_FOLDER + "/LanguageListView.jsp";
+	public String LANGUAGE_CTL = APP_CONTEXT + "/ctl/LanguageCtl";
+	public String LANGUAGE_LIST_CTL = APP_CONTEXT + "/ctl/LanguageListCtl";
 }
