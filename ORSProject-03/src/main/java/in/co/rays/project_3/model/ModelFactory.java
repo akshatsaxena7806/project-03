@@ -251,4 +251,25 @@ public final class ModelFactory {
 		return languageModel;
 	}
 
+	public AnnouncementModelInt getAnnouncementModel() {
+
+	    AnnouncementModelInt announcementModel = 
+	        (AnnouncementModelInt) modelCache.get("announcementModel");
+
+	    if (announcementModel == null) {
+
+	        if ("Hibernate".equals(DATABASE)) {
+	            announcementModel = new AnnouncementModelHibImp();
+	        }
+
+	        if ("JDBC".equals(DATABASE)) {
+	            announcementModel = new AnnouncementModelHibImp(); 
+	            // change if JDBC implementation created
+	        }
+
+	        modelCache.put("announcementModel", announcementModel);
+	    }
+
+	    return announcementModel;
+	}
 }

@@ -20,8 +20,9 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	<script type="text/javascript"
+<script type="text/javascript"
 	src="<%=ORSView.APP_CONTEXT%>/js/CheckBox11.js"></script>
+	
 
 <style>
 .aj {
@@ -255,6 +256,17 @@
 							class="fa fa-plus mr-2"></i>Add Language
 						</a> <a class="dropdown-item" href="<%=ORSView.LANGUAGE_LIST_CTL%>">
 							<i class="fa fa-list mr-2"></i>Language List
+						</a>
+					</div></li>
+				<li class="nav-item dropdown px-1"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+						Announcement </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="http://localhost:8080/ORSProject-03/ctl/AnnouncementCtl">
+							<i class="fa fa-plus mr-2"></i>Add Announcement
+						</a> <a class="dropdown-item"
+							href="<%=ORSView.ANNOUNCEMENT_LIST_CTL%>"> <i
+							class="fa fa-list mr-2"></i>Announcement List
 						</a>
 					</div></li>
 

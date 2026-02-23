@@ -105,4 +105,11 @@ public interface ORSView {
 	public String LANGUAGE_LIST_VIEW = PAGE_FOLDER + "/LanguageListView.jsp";
 	public String LANGUAGE_CTL = APP_CONTEXT + "/ctl/LanguageCtl";
 	public String LANGUAGE_LIST_CTL = APP_CONTEXT + "/ctl/LanguageListCtl";
+	
+
+	public String ANNOUNCEMENT_VIEW = PAGE_FOLDER + "/AnnouncementView.jsp";
+	public String ANNOUNCEMENT_LIST_VIEW = PAGE_FOLDER + "/AnnouncementListView.jsp";
+	public String ANNOUNCEMENT_CTL = APP_CONTEXT + "/ctl/AnnouncementCtl";
+	public String ANNOUNCEMENT_LIST_CTL = APP_CONTEXT + "/ctl/AnnouncementListCtl";
+	
 }

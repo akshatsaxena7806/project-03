@@ -126,6 +126,7 @@ public abstract class BaseCtl extends HttpServlet{
 
         // Check if operation is not DELETE, VIEW, CANCEL, RESET and NULL then
         // perform input data validation
+        System.out.println(op);
 
         if (DataValidator.isNotNull(op) && !OP_CANCEL.equalsIgnoreCase(op) && !OP_VIEW.equalsIgnoreCase(op)
 				&& !OP_DELETE.equalsIgnoreCase(op)&& !OP_RESET.equalsIgnoreCase(op)) {
