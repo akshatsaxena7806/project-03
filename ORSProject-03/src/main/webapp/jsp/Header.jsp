@@ -22,7 +22,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript"
 	src="<%=ORSView.APP_CONTEXT%>/js/CheckBox11.js"></script>
-	
+
 
 <style>
 .aj {
@@ -262,12 +262,25 @@
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
 						Announcement </a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="http://localhost:8080/ORSProject-03/ctl/AnnouncementCtl">
+						<a class="dropdown-item"
+							href="http://localhost:8080/ORSProject-03/ctl/AnnouncementCtl">
 							<i class="fa fa-plus mr-2"></i>Add Announcement
 						</a> <a class="dropdown-item"
 							href="<%=ORSView.ANNOUNCEMENT_LIST_CTL%>"> <i
 							class="fa fa-list mr-2"></i>Announcement List
 						</a>
+					</div></li>
+				<li class="nav-item dropdown px-1"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+						Result </a>
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" href="<%=ORSView.RESULT_CTL%>"> <i
+							class="fa fa-plus mr-2"></i>Add Result
+						</a> <a class="dropdown-item" href="<%=ORSView.RESULT_LIST_CTL%>">
+							<i class="fa fa-list mr-2"></i>Result List
+						</a>
+
 					</div></li>
 
 

@@ -57,11 +57,14 @@
 			resource="in/co/rays/project_3/hbm/InventoryDTO.hbm.xml" />
 		<mapping
 			resource="in/co/rays/project_3/hbm/SessionDTO.hbm.xml" />
-			<mapping
+		<mapping
 			resource="in/co/rays/project_3/hbm/LenguageDTO.hbm.xml" />
-			
-			<mapping
+
+		<mapping
 			resource="in/co/rays/project_3/hbm/AnnouncementDTO.hbm.xml" />
+
+		<mapping
+			resource="in/co/rays/project_3/hbm/ResultDTO.hbm.xml" />
 
 
 	</session-factory>
