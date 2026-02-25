@@ -63,8 +63,10 @@
 		<mapping
 			resource="in/co/rays/project_3/hbm/AnnouncementDTO.hbm.xml" />
 
+		<mapping resource="in/co/rays/project_3/hbm/ResultDTO.hbm.xml" />
+
 		<mapping
-			resource="in/co/rays/project_3/hbm/ResultDTO.hbm.xml" />
+			resource="in/co/rays/project_3/hbm/PlacementDTO.hbm.xml" />
 
 
 	</session-factory>

@@ -294,4 +294,25 @@ public final class ModelFactory {
 
 		return resultModel;
 	}
+	
+	public PlacementModelInt getPlacementModel() {
+
+		PlacementModelInt placementModel = 
+				(PlacementModelInt) modelCache.get("placementModel");
+
+		if (placementModel == null) {
+
+			if ("Hibernate".equals(DATABASE)) {
+				placementModel = new PlacementModelHibImp();
+			}
+
+			if ("JDBC".equals(DATABASE)) {
+				placementModel = new PlacementModelHibImp(); // change if JDBC impl created
+			}
+
+			modelCache.put("placementModel", placementModel);
+		}
+
+		return placementModel;
+	}
 }

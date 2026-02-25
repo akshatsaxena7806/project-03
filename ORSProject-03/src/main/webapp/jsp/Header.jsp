@@ -282,6 +282,19 @@
 						</a>
 
 					</div></li>
+				<li class="nav-item dropdown px-1"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+						Placement </a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" href="<%=ORSView.PLACEMENT_CTL%>"> <i
+							class="fa fa-plus mr-2"></i>Add Placement
+						</a> <a class="dropdown-item" href="<%=ORSView.PLACEMENT_LIST_CTL%>">
+							<i class="fa fa-list mr-2"></i>Placement List
+						</a>
+
+					</div></li>
 
 
 				<%

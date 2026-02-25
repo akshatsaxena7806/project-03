@@ -300,6 +300,7 @@ public class UserModelHibImp implements UserModelInt {
 			throw new DatabaseException("Database connection was lost. Please try again.");
 
 		} catch (Exception e) {
+			e.printStackTrace();
 
 			throw new DatabaseException("Error during authentication");
 

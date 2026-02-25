@@ -117,4 +117,9 @@ public interface ORSView {
 	public String RESULT_CTL = APP_CONTEXT + "/ctl/ResultCtl";
 	public String RESULT_LIST_CTL = APP_CONTEXT + "/ctl/ResultListCtl";
 	
+	public String PLACEMENT_VIEW = PAGE_FOLDER + "/PlacementView.jsp";
+	public String PLACEMENT_LIST_VIEW = PAGE_FOLDER + "/PlacementListView.jsp";
+	public String PLACEMENT_CTL = APP_CONTEXT + "/ctl/PlacementCtl";
+	public String PLACEMENT_LIST_CTL = APP_CONTEXT + "/ctl/PlacementListCtl";
+	
 }
