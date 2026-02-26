@@ -121,5 +121,10 @@ public interface ORSView {
 	public String PLACEMENT_LIST_VIEW = PAGE_FOLDER + "/PlacementListView.jsp";
 	public String PLACEMENT_CTL = APP_CONTEXT + "/ctl/PlacementCtl";
 	public String PLACEMENT_LIST_CTL = APP_CONTEXT + "/ctl/PlacementListCtl";
+
+	public String HOSPITAL_VIEW = PAGE_FOLDER + "/HospitalView.jsp";
+	public String HOSPITAL_LIST_VIEW = PAGE_FOLDER + "/HospitalListView.jsp";
+	public String HOSPITAL_CTL = APP_CONTEXT + "/ctl/HospitalCtl";
+	public String HOSPITAL_LIST_CTL = APP_CONTEXT + "/ctl/HospitalListCtl";
 	
 }

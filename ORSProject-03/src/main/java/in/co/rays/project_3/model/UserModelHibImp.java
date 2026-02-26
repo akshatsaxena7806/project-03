@@ -52,7 +52,7 @@ public class UserModelHibImp implements UserModelInt {
 
 			tx.commit();
 			
-			
+		
 
 		}catch (org.hibernate.exception.JDBCConnectionException e) {
 			e.printStackTrace();

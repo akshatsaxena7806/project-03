@@ -67,6 +67,9 @@
 
 		<mapping
 			resource="in/co/rays/project_3/hbm/PlacementDTO.hbm.xml" />
+		<mapping
+			resource="in/co/rays/project_3/hbm/HospitalDTO.hbm.xml" />
+
 
 
 	</session-factory>

@@ -99,7 +99,7 @@
 
 						<!-- Placement Status -->
 						<b>Placement Status *</b> <select name="placementStatus"
-							class="form-control"> 
+							class="form-control">
 							<option value="">--Select--</option>
 
 							<option value="Selected"
@@ -136,8 +136,8 @@
 								value="<%=PlacementCtl.OP_RESET%>">
 						</div>
 						<%
-}
-%>
+							}
+						%>
 
 					</div>
 				</div>

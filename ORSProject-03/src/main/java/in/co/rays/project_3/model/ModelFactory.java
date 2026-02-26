@@ -253,30 +253,28 @@ public final class ModelFactory {
 
 	public AnnouncementModelInt getAnnouncementModel() {
 
-	    AnnouncementModelInt announcementModel = 
-	        (AnnouncementModelInt) modelCache.get("announcementModel");
+		AnnouncementModelInt announcementModel = (AnnouncementModelInt) modelCache.get("announcementModel");
 
-	    if (announcementModel == null) {
+		if (announcementModel == null) {
 
-	        if ("Hibernate".equals(DATABASE)) {
-	            announcementModel = new AnnouncementModelHibImp();
-	        }
+			if ("Hibernate".equals(DATABASE)) {
+				announcementModel = new AnnouncementModelHibImp();
+			}
 
-	        if ("JDBC".equals(DATABASE)) {
-	            announcementModel = new AnnouncementModelHibImp(); 
-	            // change if JDBC implementation created
-	        }
+			if ("JDBC".equals(DATABASE)) {
+				announcementModel = new AnnouncementModelHibImp();
+				// change if JDBC implementation created
+			}
 
-	        modelCache.put("announcementModel", announcementModel);
-	    }
+			modelCache.put("announcementModel", announcementModel);
+		}
 
-	    return announcementModel;
+		return announcementModel;
 	}
-	
+
 	public ResultModelInt getResultModel() {
 
-		ResultModelInt resultModel = 
-				(ResultModelInt) modelCache.get("resultModel");
+		ResultModelInt resultModel = (ResultModelInt) modelCache.get("resultModel");
 
 		if (resultModel == null) {
 
@@ -285,7 +283,7 @@ public final class ModelFactory {
 			}
 
 			if ("JDBC".equals(DATABASE)) {
-				resultModel = new ResultModelHibImp(); 
+				resultModel = new ResultModelHibImp();
 				// change if JDBC impl created
 			}
 
@@ -294,11 +292,10 @@ public final class ModelFactory {
 
 		return resultModel;
 	}
-	
+
 	public PlacementModelInt getPlacementModel() {
 
-		PlacementModelInt placementModel = 
-				(PlacementModelInt) modelCache.get("placementModel");
+		PlacementModelInt placementModel = (PlacementModelInt) modelCache.get("placementModel");
 
 		if (placementModel == null) {
 
@@ -315,4 +312,25 @@ public final class ModelFactory {
 
 		return placementModel;
 	}
+
+	public HospitalModelInt getHospitalModel() {
+
+		HospitalModelInt hospitalModel = (HospitalModelInt) modelCache.get("hospitalModel");
+
+		if (hospitalModel == null) {
+
+			if ("Hibernate".equals(DATABASE)) {
+				hospitalModel = new HospitalModelHibImp();
+			}
+
+			if ("JDBC".equals(DATABASE)) {
+				hospitalModel = new HospitalModelHibImp(); // change if JDBC impl created
+			}
+
+			modelCache.put("hospitalModel", hospitalModel);
+		}
+
+		return hospitalModel;
+	}
+
 }
