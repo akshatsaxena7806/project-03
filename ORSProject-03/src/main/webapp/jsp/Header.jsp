@@ -306,6 +306,19 @@
 						</a>
 
 					</div></li>
+				<li class="nav-item dropdown px-1"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+						Vehicle </a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" href="<%=ORSView.VEHICLE_CTL%>"> <i
+							class="fa fa-plus mr-2"></i>Add Vehicle
+						</a> <a class="dropdown-item" href="<%=ORSView.VEHICLE_LIST_CTL%>">
+							<i class="fa fa-list mr-2"></i>Vehicle List
+						</a>
+
+					</div></li>
 
 
 				<%

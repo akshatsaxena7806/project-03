@@ -14,25 +14,18 @@ import in.co.rays.project_3.exception.DuplicateRecordException;
  */
 public interface HospitalModelInt {
 
-    public long add(HospitalDTO dto) 
-            throws DatabaseException, DuplicateRecordException;
+	public long add(HospitalDTO dto) throws DatabaseException, DuplicateRecordException;
 
-    public void delete(HospitalDTO dto) 
-            throws DatabaseException;
+	public void delete(HospitalDTO dto) throws DatabaseException;
 
-    public void update(HospitalDTO dto) 
-            throws DatabaseException, DuplicateRecordException;
+	public void update(HospitalDTO dto) throws DatabaseException, DuplicateRecordException;
 
-    public List list() 
-            throws DatabaseException;
+	public List list() throws DatabaseException;
 
-    public List search(HospitalDTO dto, int pageNo, int pageSize) 
-            throws DatabaseException;
+	public List search(HospitalDTO dto, int pageNo, int pageSize) throws DatabaseException;
 
-    public HospitalDTO findByPK(long pk) 
-            throws DatabaseException;
+	public HospitalDTO findByPK(long pk) throws DatabaseException;
 
-    public HospitalDTO findByHospitalId(String hospitalId) 
-            throws DatabaseException;
+	public HospitalDTO findByHospitalId(String hospitalId) throws DatabaseException;
 
 }

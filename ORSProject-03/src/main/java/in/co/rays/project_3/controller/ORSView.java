@@ -127,4 +127,9 @@ public interface ORSView {
 	public String HOSPITAL_CTL = APP_CONTEXT + "/ctl/HospitalCtl";
 	public String HOSPITAL_LIST_CTL = APP_CONTEXT + "/ctl/HospitalListCtl";
 	
+	public String VEHICLE_VIEW = PAGE_FOLDER + "/VehicleView.jsp";
+	public String VEHICLE_LIST_VIEW = PAGE_FOLDER + "/VehicleListView.jsp";
+	public String VEHICLE_CTL = APP_CONTEXT + "/ctl/VehicleCtl";
+	public String VEHICLE_LIST_CTL = APP_CONTEXT + "/ctl/VehicleListCtl";
+	
 }
