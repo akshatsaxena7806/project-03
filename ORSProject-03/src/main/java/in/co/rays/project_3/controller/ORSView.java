@@ -132,4 +132,9 @@ public interface ORSView {
 	public String VEHICLE_CTL = APP_CONTEXT + "/ctl/VehicleCtl";
 	public String VEHICLE_LIST_CTL = APP_CONTEXT + "/ctl/VehicleListCtl";
 	
+	public String EVENT_VIEW = PAGE_FOLDER + "/EventView.jsp";
+	public String EVENT_LIST_VIEW = PAGE_FOLDER + "/EventListView.jsp";
+	public String EVENT_CTL = APP_CONTEXT + "/ctl/EventCtl";
+	public String EVENT_LIST_CTL = APP_CONTEXT + "/ctl/EventListCtl";
+	
 }

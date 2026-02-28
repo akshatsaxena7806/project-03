@@ -18,7 +18,7 @@
 	padding-top: 75px;
 }
 </style>
-sc<script type="text/javascript">
+<script type="text/javascript">
 $(function() {
     $("#datepicker4").datepicker({
         dateFormat: 'dd/mm/yy',

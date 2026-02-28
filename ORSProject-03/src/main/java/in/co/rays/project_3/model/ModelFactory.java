@@ -332,7 +332,7 @@ public final class ModelFactory {
 
 		return hospitalModel;
 	}
-	
+
 	public VehicleModelInt getVehicleModel() {
 
 		VehicleModelInt vehicleModel = (VehicleModelInt) modelCache.get("vehicleModel");
@@ -353,4 +353,23 @@ public final class ModelFactory {
 		return vehicleModel;
 	}
 
+	public EventModelInt getEventModel() {
+
+		EventModelInt eventModel = (EventModelInt) modelCache.get("eventModel");
+
+		if (eventModel == null) {
+
+			if ("Hibernate".equals(DATABASE)) {
+				eventModel = new EventModelHibImp();
+			}
+
+			if ("JDBC".equals(DATABASE)) {
+				eventModel = new EventModelHibImp(); // change if JDBC impl created
+			}
+
+			modelCache.put("eventModel", eventModel);
+		}
+
+		return eventModel;
+	}
 }
