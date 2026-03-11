@@ -332,7 +332,36 @@
 						</a>
 
 					</div></li>
+				<li class="nav-item dropdown px-1"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+						Donation </a>
 
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" href="<%=ORSView.DONATION_CTL%>"> <i
+							class="fa fa-plus mr-2"></i>Add Donation
+						</a> <a class="dropdown-item" href="<%=ORSView.DONATION_LIST_CTL%>">
+							<i class="fa fa-list mr-2"></i>Donation List
+						</a>
+
+					</div></li>
+<li class="nav-item dropdown px-1">
+	<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+		Warranty
+	</a>
+
+	<div class="dropdown-menu">
+
+		<a class="dropdown-item" href="<%=ORSView.WARRANTY_CTL%>">
+			<i class="fa fa-plus mr-2"></i>Add Warranty
+		</a>
+
+		<a class="dropdown-item" href="<%=ORSView.WARRANTY_LIST_CTL%>">
+			<i class="fa fa-list mr-2"></i>Warranty List
+		</a>
+
+	</div>
+</li>
 
 				<%
 					}

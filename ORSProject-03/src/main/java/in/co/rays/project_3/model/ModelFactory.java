@@ -372,4 +372,43 @@ public final class ModelFactory {
 
 		return eventModel;
 	}
+	public DonationModelInt getDonationModel() {
+
+		DonationModelInt donationModel = (DonationModelInt) modelCache.get("donationModel");
+
+		if (donationModel == null) {
+
+			if ("Hibernate".equals(DATABASE)) {
+				donationModel = new DonationModelHibImp();
+			}
+
+			if ("JDBC".equals(DATABASE)) {
+				donationModel = new DonationModelHibImp(); // change if JDBC impl created
+			}
+
+			modelCache.put("donationModel", donationModel);
+		}
+
+		return donationModel;
+	}
+	public WarrantyModelInt getWarrantyModel() {
+
+		WarrantyModelInt warrantyModel = (WarrantyModelInt) modelCache.get("warrantyModel");
+
+		if (warrantyModel == null) {
+
+			if ("Hibernate".equals(DATABASE)) {
+				warrantyModel = new WarrantyModelHibImp();
+			}
+
+			if ("JDBC".equals(DATABASE)) {
+				warrantyModel = new WarrantyModelHibImp(); // change if JDBC impl created
+			}
+
+			modelCache.put("warrantyModel", warrantyModel);
+		}
+
+		return warrantyModel;
+	}
+	
 }

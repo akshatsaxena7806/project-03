@@ -137,4 +137,14 @@ public interface ORSView {
 	public String EVENT_CTL = APP_CONTEXT + "/ctl/EventCtl";
 	public String EVENT_LIST_CTL = APP_CONTEXT + "/ctl/EventListCtl";
 	
+	public String DONATION_VIEW = PAGE_FOLDER + "/DonationView.jsp";
+	public String DONATION_LIST_VIEW = PAGE_FOLDER + "/DonationListView.jsp";
+	public String DONATION_CTL = APP_CONTEXT + "/ctl/DonationCtl";
+	public String DONATION_LIST_CTL = APP_CONTEXT + "/ctl/DonationListCtl";
+	
+	public String WARRANTY_VIEW = PAGE_FOLDER + "/WarrantyView.jsp";
+	public String WARRANTY_LIST_VIEW = PAGE_FOLDER + "/WarrantyListView.jsp";
+	public String WARRANTY_CTL = APP_CONTEXT + "/ctl/WarrantyCtl";
+	public String WARRANTY_LIST_CTL = APP_CONTEXT + "/ctl/WarrantyListCtl";
+	
 }
