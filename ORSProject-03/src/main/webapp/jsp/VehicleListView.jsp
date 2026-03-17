@@ -61,7 +61,9 @@
 			%>
 			<div class="alert alert-danger">
 				<%=ServletUtility.getErrorMessage(request)%>
+				
 			</div>
+			
 			<%
 				}
 			%>

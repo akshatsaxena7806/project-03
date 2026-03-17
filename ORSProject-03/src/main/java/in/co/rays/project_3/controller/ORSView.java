@@ -147,4 +147,9 @@ public interface ORSView {
 	public String WARRANTY_CTL = APP_CONTEXT + "/ctl/WarrantyCtl";
 	public String WARRANTY_LIST_CTL = APP_CONTEXT + "/ctl/WarrantyListCtl";
 	
+	public String SALARY_VIEW = PAGE_FOLDER + "/SalaryView.jsp";
+	public String SALARY_LIST_VIEW = PAGE_FOLDER + "/SalaryListView.jsp";
+	public String SALARY_CTL = APP_CONTEXT + "/ctl/SalaryCtl";
+	public String SALARY_LIST_CTL = APP_CONTEXT + "/ctl/SalaryListCtl";
+	
 }

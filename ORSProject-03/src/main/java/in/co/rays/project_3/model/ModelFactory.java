@@ -410,5 +410,23 @@ public final class ModelFactory {
 
 		return warrantyModel;
 	}
-	
+	public SalaryModelInt getSalaryModel() {
+
+		SalaryModelInt salaryModel = (SalaryModelInt) modelCache.get("salaryModel");
+
+		if (salaryModel == null) {
+
+			if ("Hibernate".equals(DATABASE)) {
+				salaryModel = new SalaryModelHibImp();
+			}
+
+			if ("JDBC".equals(DATABASE)) {
+				salaryModel = new SalaryModelHibImp(); // change if JDBC impl created
+			}
+
+			modelCache.put("salaryModel", salaryModel);
+		}
+
+		return salaryModel;
+	}
 }
