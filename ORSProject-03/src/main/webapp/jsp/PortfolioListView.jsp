@@ -72,7 +72,7 @@
 				<%=ServletUtility.getSuccessMessage(request)%>
 			</div>
 			<%
-				}
+				} if (list.size() > 0) {
 			%>
 
 			<!-- SEARCH FILTER -->
@@ -191,7 +191,16 @@
 
 				</tr>
 			</table>
-
+			<%
+				} else {
+			%>
+			<div style="padding-left: 48%;">
+				<input type="submit" name="operation" class="btn btn-primary btn-md"
+					style="font-size: 17px" value="<%=PortfolioListCtl.OP_BACK%>">
+			</div>
+				<%
+				}
+			%>
 		</form>
 	</div>
 

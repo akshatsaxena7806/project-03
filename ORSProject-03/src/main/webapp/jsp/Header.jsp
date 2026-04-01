@@ -227,7 +227,7 @@
 							class="dropdown-item" href="<%=ORSView.PROFILE_LIST_CTL%>"><i
 							class="fa fa-list mr-2"></i>Profile List</a>
 					</div></li>
-				<li class="nav-item dropdown px-1"><a
+				<%--<li class="nav-item dropdown px-1"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
 						Inventory </a>
 					<div class="dropdown-menu">
@@ -238,7 +238,7 @@
 						</a>
 					</div></li>
 				</li>
-				<li class="nav-item dropdown px-1"><a
+				 <li class="nav-item dropdown px-1"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
 						Session </a>
 					<div class="dropdown-menu">
@@ -257,8 +257,8 @@
 						</a> <a class="dropdown-item" href="<%=ORSView.LANGUAGE_LIST_CTL%>">
 							<i class="fa fa-list mr-2"></i>Language List
 						</a>
-					</div></li>
-				<li class="nav-item dropdown px-1"><a
+					</div></li> --%>
+				<%-- <li class="nav-item dropdown px-1"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
 						Announcement </a>
 					<div class="dropdown-menu">
@@ -332,7 +332,7 @@
 						</a>
 
 					</div></li>
-				<%-- <li class="nav-item dropdown px-1"><a
+ --%>				<%-- <li class="nav-item dropdown px-1"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
 						Donation </a>
 

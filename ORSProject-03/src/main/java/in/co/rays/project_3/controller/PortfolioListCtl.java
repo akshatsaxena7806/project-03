@@ -128,6 +128,10 @@ public class PortfolioListCtl extends BaseCtl {
 				ServletUtility.setErrorMessage("Select at least one record", request);
 			}
 		}
+		if(OP_BACK.equalsIgnoreCase(op)){
+   		ServletUtility.redirect(ORSView.PORTFOLIO_LIST_CTL, request, response);
+   		return;
+   	}
 
 		try {
 			List list = model.search(dto, pageNo, pageSize);
@@ -135,8 +139,11 @@ public class PortfolioListCtl extends BaseCtl {
 
 			request.setAttribute("list", list);
 
-			if (nextList == null || nextList.size() == 0) {
+			if (list == null || list.size() == 0&&!OP_DELETE.equalsIgnoreCase(op)) {
+				ServletUtility.setErrorMessage("No record found ", request);
+			}if (nextList == null || nextList.size() == 0) {
 				request.setAttribute("nextListSize", 0);
+
 			} else {
 				request.setAttribute("nextListSize", nextList.size());
 			}

@@ -155,7 +155,6 @@ public class SubjectListCtl extends BaseCtl {
 			ServletUtility.setList(list, request);
 			
 			if (list == null || list.size() == 0&&!OP_DELETE.equalsIgnoreCase(op)) {
-				System.out.println("last endpopopop"+list);
 				ServletUtility.setErrorMessage("No record found ", request);
 			}if (next == null || next.size() == 0) {
 				request.setAttribute("nextListSize", 0);
