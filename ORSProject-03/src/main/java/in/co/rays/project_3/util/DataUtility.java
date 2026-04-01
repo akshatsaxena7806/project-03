@@ -60,6 +60,9 @@ public class DataUtility {
 	 * @param val :value
 	 * @return int
 	 */
+	public static String getIntData(int val) {
+	    return String.valueOf(val);
+	}
 
 	public static int getInt(String val) {
 		if (DataValidator.isInteger(val)) {

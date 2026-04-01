@@ -77,8 +77,10 @@
 			resource="in/co/rays/project_3/hbm/DonationDTO.hbm.xml" />
 		<mapping
 			resource="in/co/rays/project_3/hbm/WarrantyDTO.hbm.xml" />
-			<mapping
+		<mapping
 			resource="in/co/rays/project_3/hbm/SalaryDTO.hbm.xml" />
+		<mapping
+			resource="in/co/rays/project_3/hbm/PortfolioDTO.hbm.xml" />
 
 
 

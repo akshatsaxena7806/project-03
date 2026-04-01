@@ -429,4 +429,23 @@ public final class ModelFactory {
 
 		return salaryModel;
 	}
+	public PortfolioModelInt getPortfolioModel() {
+
+		PortfolioModelInt portfolioModel = (PortfolioModelInt) modelCache.get("portfolioModel");
+
+		if (portfolioModel == null) {
+
+			if ("Hibernate".equals(DATABASE)) {
+				portfolioModel = new PortfolioModelHibImpl();
+			}
+
+			if ("JDBC".equals(DATABASE)) {
+				portfolioModel = new PortfolioModelHibImpl(); // change if JDBC impl created
+			}
+
+			modelCache.put("portfolioModel", portfolioModel);
+		}
+
+		return portfolioModel;
+	}
 }

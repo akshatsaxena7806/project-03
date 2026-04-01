@@ -152,4 +152,9 @@ public interface ORSView {
 	public String SALARY_CTL = APP_CONTEXT + "/ctl/SalaryCtl";
 	public String SALARY_LIST_CTL = APP_CONTEXT + "/ctl/SalaryListCtl";
 	
+	
+	public String PORTFOLIO_VIEW = PAGE_FOLDER + "/PortfolioView.jsp";
+	public String PORTFOLIO_LIST_VIEW = PAGE_FOLDER + "/PortfolioListView.jsp";
+	public String PORTFOLIO_CTL = APP_CONTEXT + "/ctl/PortfolioCtl";
+	public String PORTFOLIO_LIST_CTL = APP_CONTEXT + "/ctl/PortfolioListCtl";
 }
